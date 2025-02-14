@@ -1,0 +1,30 @@
+{
+  "name": "mlbb-overlay-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Faizlazuardi/Ingame-OVERLAY.git"
+  },
+  "author": "Faiz Lazuardi",
+  "license": "ISC",
+  "description": "Backend for Mobile Legends Overlay",
+  "bugs": {
+    "url": "https://github.com/Faizlazuardi/Ingame-OVERLAY/issues"
+  },
+  "homepage": "https://github.com/Faizlazuardi/Ingame-OVERLAY#readme",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "http": "^0.0.1-security",
+    "stream": "^0.0.3",
+    "ws": "^8.18.0"
+  },
+  "keywords": []
+}
