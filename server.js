@@ -1,8 +1,9 @@
+const express = require('express');
 const http = require("http");
 const WebSocket = require("ws");
-const app = require("./app");
 const { fetchSpreadsheetData } = require("./services/spreadsheetService");
 
+const app = express();
 const PORT = process.env.PORT || 3000;
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ noServer: true });
