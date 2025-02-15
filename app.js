@@ -1,12 +1,21 @@
-const webRoutes = require('./routes/webroutes');
-const path = require('path');
 const express = require('express');
+const { createClient } = require('@supabase/supabase-js');
+require('dotenv').config();
+
 const app = express();
+const supabaseUrl = 'https://bluktltvzslrzitntrjl.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
 
-// Middleware untuk file statis
-app.use(express.static(path.join(__dirname, '../client/public')));
-
-// Routing web
-app.use('/', webRoutes);
+// Route API
+app.get('/heroes', async (req, res) => {
+    try {
+        const { data, error } = await supabase.from('Hero').select();
+        if (error) throw error;
+        res.json(data);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
 
 module.exports = app;
