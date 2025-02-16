@@ -1,11 +1,11 @@
+const express = require('express');
+const app = express();
+
 const cors = require('cors');
 require('dotenv').config();
 app.use(cors({
     origin: 'https://overlay-mlbb.vercel.app/'
 }));
-
-const express = require('express');
-const app = express();
 
 const { createClient } = require('@supabase/supabase-js');
 const supabaseUrl = 'https://bluktltvzslrzitntrjl.supabase.co'
