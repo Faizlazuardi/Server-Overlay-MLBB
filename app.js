@@ -10,12 +10,22 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 // Route API
 app.get('/heroes', async (req, res) => {
     try {
-        const { data, error } = await supabase.from('Hero').select();
+        const { data, error } = await supabase.from('Heroes').select();
         if (error) throw error;
         res.json(data);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
+
+app.get('/players', async (req, res) => {
+    try {
+        const { data, error } = await supabase.from('Players').select();
+        if (error) throw error;
+        res.json(data);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+})
 
 module.exports = app;
