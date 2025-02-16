@@ -4,7 +4,11 @@ const app = express();
 const cors = require('cors');
 require('dotenv').config();
 app.use(cors({
-    origin: 'https://overlay-mlbb.vercel.app/'
+    origin: [
+        'https://overlay-mlbb.vercel.app',
+        'http://127.0.0.1:5500', // Untuk Live Server
+        'http://localhost:3000'  // Jika diperlukan
+    ]
 }));
 
 const { createClient } = require('@supabase/supabase-js');
