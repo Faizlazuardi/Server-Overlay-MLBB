@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors');
 require('dotenv').config();
 app.use(cors({
-    origin: 'https://server-overlay-mlbb-production.up.railway.app/'
+    origin: 'https://overlay-mlbb.vercel.app/'
 }));
 
 const { createClient } = require('@supabase/supabase-js');
